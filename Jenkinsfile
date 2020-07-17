@@ -9,4 +9,7 @@ node {
         junit '**/target/surefire-reports/TEST-*.xml'
         archiveArtifacts 'target/*.jar'
     }
+    stage('deploy') {
+        ansiblePlaybook credentialsId: 'ssh-cred', installation: 'ansible-installation', playbook: 'deploy.ayml'
+    }
 }
