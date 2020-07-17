@@ -10,6 +10,6 @@ node {
         archiveArtifacts 'target/*.jar'
     }
     stage('deploy') {
-        ansiblePlaybook credentialsId: 'ssh-cred', installation: 'ansible-installation', playbook: 'deploy.ayml'
+        ansiblePlaybook credentialsId: 'ssh-cred', installation: 'ansible-installation', playbook: 'deploy.yaml'
     }
 }
